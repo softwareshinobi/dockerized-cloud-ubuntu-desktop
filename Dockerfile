@@ -1,4 +1,4 @@
-FROM dorowu/ubuntu-desktop-lxde-vnc as baseDesktop
+FROM dorowu/ubuntu-desktop-lxde-vnc as desktop-base
 
 ##
 

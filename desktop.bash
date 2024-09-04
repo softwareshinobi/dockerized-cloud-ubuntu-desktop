@@ -8,8 +8,8 @@ reset
 
 clear
 
-docker-compose pull
+docker compose pull
 
-docker-compose down
+docker compose down
 
-docker-compose up --build -d
+docker compose up --build -d
