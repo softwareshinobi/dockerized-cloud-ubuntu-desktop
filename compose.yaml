@@ -1,0 +1,56 @@
+services:
+
+##########################################
+##
+## shinobi academy desktop situation
+##
+##########################################
+
+    shinobi-academy-desktop:
+
+        container_name: shinobi-academy-desktop
+
+        hostname: urus
+
+        image: softwareshinobi/shinobi-academy-desktop
+
+        restart: unless-stopped
+
+        build: 
+
+            context: .
+
+            dockerfile: Dockerfile
+
+        volumes:
+
+            - /tmp/volumes/urus/shinobi:/home/shinobi
+
+        domainname: urus.embaNET.softwareshinobi.digital
+
+        ports:
+
+          - "5922:22"
+          
+          - "5980:80"
+
+          - "5900:5900"
+            
+        environment:
+        
+            TZ: America/Bogota
+
+            USER_UID: 1000
+
+            USER_GID: 1000
+
+            USER: shinobi
+
+            PASSWORD: shinobi
+
+            HTTP_PASSWORD: shinobi
+
+            VIRTUAL_HOST: urus.embaNET.softwareshinobi.digital
+
+            LETSENCRYPT_HOST: urus.embaNET.softwareshinobi.digital
+            

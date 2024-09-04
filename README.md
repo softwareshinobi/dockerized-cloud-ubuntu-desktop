@@ -1,1 +1,0 @@
-# ubuntu-desktop-lxde-vnc
