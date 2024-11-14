@@ -2,17 +2,17 @@ services:
 
 ##########################################
 ##
-## shinobi academy desktop situation
+## shinobi / cloud ubuntu desktop
 ##
 ##########################################
 
-    software-shinobi-desktop-lxde:
+    cloud-ubuntu-desktop:
 
-        container_name: software-shinobi-desktop-lxde
+        container_name: cloud-ubuntu-desktop
 
         hostname: urus
 
-        image: softwareshinobi/software-shinobi-desktop-lxde
+        image: softwareshinobi/cloud-ubuntu-desktop
 
         restart: unless-stopped
 
@@ -22,20 +22,20 @@ services:
 
             dockerfile: Dockerfile
 
-##        volumes:
-##
-##            - /tmp/volumes/urus/shinobi:/home/shinobi
-##
-        domainname: urus.embaNET.softwareshinobi.digital
+        volumes:
+
+            - /tmp/volumes/urus/shinobi:/home/shinobi
+
+        domainname: desktop.softwareshinobi.digital
 
         ports:
 
-          - "15922:22"
-          
-          - "15980:80"
+            - "5922:22"
 
-          - "15900:5900"
-            
+            - "5980:80"
+
+            - "5900:5900"
+
         environment:
         
             TZ: America/Bogota
@@ -50,7 +50,7 @@ services:
 
             HTTP_PASSWORD: shinobi
 
-            VIRTUAL_HOST: urus.embaNET.softwareshinobi.digital
+            VIRTUAL_HOST: desktop.softwareshinobi.digital
 
-            LETSENCRYPT_HOST: urus.embaNET.softwareshinobi.digital
+            LETSENCRYPT_HOST: desktop.softwareshinobi.digital
             
