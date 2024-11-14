@@ -10,8 +10,6 @@ services:
 
         container_name: cloud-ubuntu-desktop
 
-        hostname: urus
-
         image: softwareshinobi/cloud-ubuntu-desktop
 
         restart: unless-stopped
@@ -25,6 +23,8 @@ services:
         volumes:
 
             - /tmp/volumes/urus/shinobi:/home/shinobi
+
+        hostname: desktop
 
         domainname: desktop.softwareshinobi.digital
 
