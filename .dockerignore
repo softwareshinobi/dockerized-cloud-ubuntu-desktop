@@ -1,11 +1,15 @@
-.volumes
 
-.git
+*.md
 
-.import
+*.log
 
-.stash
+LICENSE
+
+.dockerignore
+
+.git*
 
 .recycle
 
 .trash
+

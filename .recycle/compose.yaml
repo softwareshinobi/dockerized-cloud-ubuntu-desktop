@@ -1,0 +1,72 @@
+
+services:
+
+    shinobi-academy-database-server:
+
+        container_name: shinobi-academy-database-server
+
+        image: softwareshinobi/shinobi-academy-database-server
+
+        build: 
+
+            context: .
+
+            dockerfile: Dockerfile
+
+        restart: unless-stopped
+
+        ports:
+
+            - 3306:3306
+
+        volumes:
+
+            - /tmp/volumes/a333cademy/database:/var/lib/mysql
+
+        environment:
+
+            MYSQL_ROOT_PASSWORD: aggiepride
+
+            MYSQL_DATABASE: sandbox
+
+            MYSQL_USER: sandbox
+
+            MYSQL_PASSWORD: sandbox
+            
+    shinobi-academy-database-admin:
+
+        container_name: shinobi-academy-database-admin
+
+        image: beeyev/phpmyadmin-lightweight
+        
+        restart: unless-stopped
+
+        depends_on:
+
+            - shinobi-academy-database-server
+
+        ports:
+
+            - 3380:80
+
+        environment:
+
+            PMA_HOST: shinobi-academy-database-server
+
+            MYSQL_ROOT_PASSWORD: aggiepride
+
+    shinobi-academy-database-docs:
+
+        container_name: shinobi-academy-database-docs
+
+        image: softwareshinobi/shinobi-academy-database-docs
+
+        build: 
+
+            context: docs
+
+            dockerfile: Dockerfile
+
+        ports:
+
+            - 3388:80

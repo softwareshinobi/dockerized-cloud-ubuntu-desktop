@@ -1,0 +1,41 @@
+
+docs_dir: docs
+
+site_name: Shinobi Academy Database
+
+    ##
+    ## Find More Themes Here:
+    ##
+    ##     https://mkdocs.github.io/mkdocs-bootswatch/
+    ##
+    ## List of theme values:
+    ##
+    ##     mkdocs, readthedocs, material, cerulean, cosmo, 
+    ##     cyborg, darkly, flatly, journal, litera, lumen, lux,
+    ##     materia, minty, pulse, sandstone, simplex, slate, solar,
+    ##     spacelab, superhero, united, yeti 
+    ##
+        
+
+
+
+theme:
+  name: material
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - toc.follow
+    - search.highlight
+  # Disable search and sidebars
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  features:
+    - navigation.tabs
+    - toc.integrate
+    - toc.follow
+        
+
+extra_css: [styling.css]

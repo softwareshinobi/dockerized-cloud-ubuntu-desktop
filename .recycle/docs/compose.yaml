@@ -1,0 +1,18 @@
+
+services:
+
+    shinobi-academy-database-docs:
+
+        container_name: shinobi-academy-database-docs
+
+        image: softwareshinobi/shinobi-academy-database-docs
+
+        build: 
+
+            context: .
+
+            dockerfile: Dockerfile
+
+        ports:
+
+            - 8080:80
