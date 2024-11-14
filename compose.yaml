@@ -22,7 +22,7 @@ services:
 
         volumes:
 
-            - /tmp/volumes/urus/shinobi:/home/shinobi
+            - /tmp/volumes/desktop/shinobi:/home/shinobi
 
         hostname: desktop
 
@@ -30,11 +30,11 @@ services:
 
         ports:
 
-            - "5922:22"
+            - "127.0.0.1:5922:22"
 
-            - "5980:80"
+            - "127.0.0.1:5980:80"
 
-            - "5900:5900"
+            - "127.0.0.1:5900:5900"
 
         environment:
         
